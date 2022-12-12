@@ -6,11 +6,18 @@ import UserController
 import TuitsController
     from "./controllers/tuits/tuits-controller.js";
 import cors from 'cors'
+
 import mongoose from "mongoose";
-mongoose.connect('mongodb://localhost:27017/tuiter');
+mongoose.connect(process.env.DB_CONNECTION_STRING);
+
 const app = express()
 app.use(cors())
 app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.send('Bro!')
+});
+
 TuitsController(app);
 HelloController(app);
 UserController(app);
