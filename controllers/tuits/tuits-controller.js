@@ -5,6 +5,7 @@ const currentUser = {
     "username": "NASA",
     "handle": "@nasa",
     "image": "nasa.svg",
+    "foo": "bar"
 };
 
 const createTuit = (req, res) => {
